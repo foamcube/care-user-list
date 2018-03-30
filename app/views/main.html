@@ -1,7 +1,7 @@
 <div class="row marketing">
 
   <uib-accordion close-others="true" ng-repeat="aUser in users">
-    <div uib-accordion-group class="panel-default" is-open="false">
+    <div uib-accordion-group class="panel-default">
       <uib-accordion-heading>
         <span ng-bind="aUser.name"></span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </uib-accordion-heading>
