@@ -5,13 +5,14 @@
       <uib-accordion-heading>
         <span ng-bind="aUser.name"></span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </uib-accordion-heading>
-        <p>Username: <span ng-bind="aUser.username"></span></p>
-        <p>Email: <span ng-bind="aUser.email"></span></p>
-        <p><strong>Address</strong></p>
-        <p>Street: <span ng-bind="aUser.address.street"></span></p>
-        <p>Suite: <span ng-bind="aUser.address.suite"></span></p>
-        <p>City: <span ng-bind="aUser.address.city"></span></p>
-        <p>Zipcode: <span ng-bind="aUser.address.zipcode"></span></p>
+        <p><a href="mailto:{{aUser.email}}" target="_top">Email</a></p>
+        <p>Address</p>
+        <div class="address-container">
+          <p ng-bind="aUser.address.street"></p>
+          <p ng-bind="aUser.address.suite"></p>
+          <p ng-bind="aUser.address.city"></p>
+          <p ng-bind="aUser.address.zipcode"></p>
+        </div>
         <div map-lazy-load="https://maps.google.com/maps/api/js"
           map-lazy-load-params="{{googleMapsUrl}}"
           class="map-container">
