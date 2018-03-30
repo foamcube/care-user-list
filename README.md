@@ -15,6 +15,6 @@ Running `grunt test` will run the unit tests with karma.
 ## Notes
 
 Things I may not get to before you clone:
-- Accordion doesn't auto close other items like I intended
+- Accordion doesn't auto close other items like I intended (I think it's an issue with accordion template)
 - Console may show Google Map API Key notice. Key is added but sometimes console shows message
 - Normally I would follow John Papa style guide
