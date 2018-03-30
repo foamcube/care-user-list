@@ -1,0 +1,23 @@
+<div class="row marketing">
+
+  <uib-accordion close-others="true" ng-repeat="aUser in users">
+    <div uib-accordion-group class="panel-default" is-open="false">
+      <uib-accordion-heading>
+        <span ng-bind="aUser.name"></span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </uib-accordion-heading>
+        <p>Username: <span ng-bind="aUser.username"></span></p>
+        <p>Email: <span ng-bind="aUser.email"></span></p>
+        <p><strong>Address</strong></p>
+        <p>Street: <span ng-bind="aUser.address.street"></span></p>
+        <p>Suite: <span ng-bind="aUser.address.suite"></span></p>
+        <p>City: <span ng-bind="aUser.address.city"></span></p>
+        <p>Zipcode: <span ng-bind="aUser.address.zipcode"></span></p>
+        <div map-lazy-load="https://maps.google.com/maps/api/js"
+          map-lazy-load-params="{{googleMapsUrl}}"
+          class="map-container">
+          <ng-map center="{{aUser.address.geo.lng}},{{aUser.address.geo.lat}}" zoom="3"></ng-map>
+        </div>
+    </div>
+  </uib-accordion>
+
+</div>
