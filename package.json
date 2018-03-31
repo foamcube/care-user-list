@@ -40,8 +40,4 @@
   "scripts": {
     "test": "karma start test\\karma.conf.js"
   },
-  "dependencies": {
-    "grunt-clearcache": "0.0.4",
-    "gulp": "^3.9.1"
-  }
 }
