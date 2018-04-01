@@ -1,24 +1,32 @@
-<div class="row marketing">
-
+<div class="row main">
   <uib-accordion close-others="true" ng-repeat="aUser in users">
     <div uib-accordion-group class="panel-default">
       <uib-accordion-heading>
         <span ng-bind="aUser.name"></span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </uib-accordion-heading>
-        <p><a href="mailto:{{aUser.email}}" target="_top">Email</a></p>
-        <p>Address</p>
+      <div class="col-md-4">
+        <p class="relative">Address: <a href="mailto:{{aUser.email}}" class="email" target="_top"><i class="fas fa-envelope"></i></a></p>
         <div class="address-container">
           <p ng-bind="aUser.address.street"></p>
           <p ng-bind="aUser.address.suite"></p>
           <p ng-bind="aUser.address.city"></p>
           <p ng-bind="aUser.address.zipcode"></p>
         </div>
-        <div map-lazy-load="https://maps.google.com/maps/api/js"
-          map-lazy-load-params="{{googleMapsUrl}}"
-          class="map-container">
-          <ng-map center="{{aUser.address.geo.lat}},{{aUser.address.geo.lng}}" zoom="3"></ng-map>
+        <p><span class="phone"><i class="fas fa-phone"></i> {{aUser.phone}}</span></p>
+        <p><a href="http://{{aUser.website}}" target="_blank"><i class="fas fa-globe"></i></a> {{aUser.website}}</p>
+        <p class="company-title">Company:</p>
+        <div class="address-container">
+          <p ng-bind="aUser.company.name"></p>
         </div>
+        <p class="catchphrase" ng-bind="aUser.company.catchPhrase"></p>
+        <p class="bs" ng-bind="aUser.company.bs"></p>
+      </div>
+      <div class="col-md-8">
+        <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}" class="map-container">
+          <ng-map center="{{aUser.address.geo.lat}},{{aUser.address.geo.lng}}" zoom="2"></ng-map>
+        </div>
+      </div>
     </div>
-  </uib-accordion>
-
+</div>
+</uib-accordion>
 </div>

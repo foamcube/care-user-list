@@ -5,8 +5,9 @@ version 0.16.0.
 
 ## Build & development
 
-- **grunt serve** for preview 
-- **grunt** for build but haven't tried build - maybe better not to build ;-)
+- **npm install grunt**  local grunt install (may need global if you don't have it `npm install -g grunt-cli`)
+- **grunt serve**  for preview 
+- **grunt build**  for distribution
 
 ## Testing
 
@@ -14,8 +15,4 @@ Running `grunt test` will run the unit tests with karma.
 
 ## Notes
 
-Things I may not get to before you clone:
-- Accordion doesn't auto close other items like I intended (I think it's an issue with accordion template)
-- Console may show Google Map API Key notice. Key is added but sometimes console shows message
-- Normally I would follow John Papa style guide
-- No real effort to optimize
+Sorry this didn't work first go around. The two main problems; forgot to update bower.json with map and ui-bootstrap modules, and didn't notice Bower modules directory was in .gitignore.
